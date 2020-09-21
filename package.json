@@ -14,17 +14,25 @@
     "react-bootstrap": "^1.0.0-beta.16",
     "react-datetime": "^3.0.2",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "serve": "^11.3.2"
   },
   "scripts": {
-    "start": "node server/index.js",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start-server": "node server/index.js",
-    "start-app": "npm run build && npm run start-server && npm run eject"
-  },
+"dev": "react-scripts start",
+"start": "serve -s build",
+"build": "react-scripts build",
+"test": "react-scripts test --env=jsdom",
+"eject": "react-scripts eject",
+"heroku-postbuild": "npm run build"
+},
+//   "scripts": {
+//     "start": "react-scripts start",
+//     "build": "react-scripts build",
+//     "test": "react-scripts test",
+//     "eject": "react-scripts eject",
+//     "start-server": "node server/index.js",
+//     "start-app": "npm run build && npm run start-server && npm run eject"
+//   },
   "eslintConfig": {
     "extends": "react-app"
   },
