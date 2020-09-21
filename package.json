@@ -17,13 +17,13 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node server/index.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start-server": "node server/index.js",
-    "start-app": "npm run build && npm run start-server"
+    "start-app": "npm run build && npm run start-server && npm run eject"
   },
   "eslintConfig": {
     "extends": "react-app"
