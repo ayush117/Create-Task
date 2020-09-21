@@ -16,27 +16,26 @@ console.log("----------DB------------")
 app.post('/send', (req, res) => {
   console.log(req.body);
   
-  MongoClient.connect(connectionURl, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
-	if (error) {
-		return console.log("error rrr")
-	}
+ //  MongoClient.connect(connectionURl, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
+	// if (error) {
+	// 	return console.log("error rrr")
+	// }
 
-	const db = client.db(databaseName)
+	// const db = client.db(databaseName)
 
-	db.collection('tasks').insertOne({
-		name: req.body.name,
-    	priority: req.body.priority,
-    	date: req.body.date,
-    	duedate: req.body.duedate,
-    	taskstatus: req.body.taskstatus 
-	})
-
-	})
+	// db.collection('tasks').insertOne({
+	// 	name: req.body.name,
+ //    	priority: req.body.priority,
+ //    	date: req.body.date,
+ //    	duedate: req.body.duedate,
+ //    	taskstatus: req.body.taskstatus 
+	// })
+	// })
 
   res.send(req.body);
 });
 
 
-app.listen(3030, () => {
-  console.log('server start on port 3030');
+app.listen(3000, () => {
+  console.log('server start on port 3000');
 });
