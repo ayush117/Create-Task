@@ -6,15 +6,16 @@ const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.json());
 app.use(express.static(buildPath));
 
+
+
 const { MongoClient, ObjectId} = require('mongodb')
 
 const connectionURl = 'mongodb://127.0.0.1:27017'
 const databaseName = 'Create-task'
 
-console.log("----------DB------------")
+// console.log("----------DB------------")
 
 app.post('/send', (req, res) => {
-  console.log(req.body);
   
   MongoClient.connect(connectionURl, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
 	if (error) {
@@ -36,6 +37,7 @@ app.post('/send', (req, res) => {
 });
 
 
-app.listen(5000, () => {
-  console.log('server start on port 5000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
