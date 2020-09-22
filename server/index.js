@@ -1,15 +1,16 @@
 const path = require('path');
 const express = require('express');
 const app = express();
+require('dotenv').config()
 
 const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.json());
 app.use(express.static(buildPath));
 
-
+var mongoose = require(‘mongoose’);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Create-task');
 
 const { MongoClient, ObjectId} = require('mongodb')
-
 const connectionURl = 'mongodb://127.0.0.1:27017'
 const databaseName = 'Create-task'
 
